@@ -33,8 +33,8 @@ class load
         }
         if(file_exists(engine."Views/" . $filename . ".php")){
             $contents = file_get_contents(engine."Views/" . $filename . ".php", true);
-            $contents=str_replace('{{','<?php echo ',$contents);
-            $contents=str_replace('}}',' ?>',$contents);
+            $contents=str_replace('{{','<?php easy::out(',$contents);
+            $contents=str_replace('}}','); ?>',$contents);
             $contents=str_replace('<@','<?php ',$contents);
             $contents=str_replace('@>',' ?>',$contents);
             $contents='?>'.trim($contents).'<?';
