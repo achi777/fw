@@ -11,6 +11,7 @@
     <title>test</title>
   </head>
   <body>
+  <h2>{{$members}}</h2>
     <h3>
         <table class="table">
             <thead>
