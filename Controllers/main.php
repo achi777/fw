@@ -19,8 +19,10 @@ class Controller extends init
     {
         //echo $this->model->seletcList();
         $data['title'] = "main page";
-        $data['members'] = $this->model->seletcList();
+        $data['members'] = $this->model->posts();
+        $this->load->view("header");
         $this->load->view("main", $data);
+        $this->load->view("footer");
 
     }
 }

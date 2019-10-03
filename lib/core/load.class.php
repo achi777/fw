@@ -32,13 +32,24 @@ class load
             }
         }
         if(file_exists(engine."Views/" . $filename . ".php")){
+            /***********title**************/
+            $begin_contents = file_get_contents(engine."Views/layout/begin.php", true);
+            $begin_contents=str_replace('{{','<?php easy::out(',$begin_contents);
+            $begin_contents=str_replace('}}','); ?>',$begin_contents);
+            $begin_contents=str_replace('<@','<?php ',$begin_contents);
+            $begin_contents=str_replace('@>',' ?>',$begin_contents);
+            $begin_contents='?>'.trim($begin_contents);
+
+            eval($begin_contents);
+            /**************view**************/
             $contents = file_get_contents(engine."Views/" . $filename . ".php", true);
             $contents=str_replace('{{','<?php easy::out(',$contents);
             $contents=str_replace('}}','); ?>',$contents);
             $contents=str_replace('<@','<?php ',$contents);
             $contents=str_replace('@>',' ?>',$contents);
-            $contents='?>'.trim($contents).'<?';
+            $contents='?>'.trim($contents);
             eval($contents);
+            require_once engine."Views/layout/end.php";
         }else{
             echo "<pre>This View not exist</pre>";
         }

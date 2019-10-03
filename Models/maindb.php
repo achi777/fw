@@ -31,10 +31,9 @@ class Model extends init
         return $result;
     }
 
-    public function seletcList(){
-        /**Select with pagination**/
+    public function posts(){
         $this->db->select("*");
-        $this->db->from("members");
+        $this->db->from("posts");
         $result = $this->db->exec("get");
         return $result;
     }

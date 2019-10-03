@@ -13,4 +13,4 @@ define('baseurl',domain.path);
 define('dbHost','localhost');
 define('dbUser','root');
 define('dbPass','');
-define('dbName','satesto');
+define('dbName','fw_base');
