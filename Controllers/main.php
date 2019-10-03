@@ -17,12 +17,18 @@ class Controller extends init
 
     public function main()
     {
-        //echo $this->model->seletcList();
-        $data['title'] = "main page";
-        $data['members'] = $this->model->posts();
+        $header_data['title'] = "AO Framework Project";
+        $data['copyright'] = "© Archil Odishelidze 2019";
+        $data['posts'] = $this->model->posts();
+        $data['randomPost'] = $this->model->randomPost();
+        /******************************************/
+        $this->load->template_start($header_data);
+        /******************************************/
         $this->load->view("header");
         $this->load->view("main", $data);
-        $this->load->view("footer");
+        $this->load->view("footer", $data);
+        /******************************************/
+        $this->load->template_end();
 
     }
 }

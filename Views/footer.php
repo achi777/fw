@@ -1,3 +1,3 @@
 <footer class="container">
-    <p>&copy; Company 2017-2019</p>
+    <p>{{$copyright}}</p>
 </footer>

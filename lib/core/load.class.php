@@ -19,6 +19,48 @@ class load
         return (json_last_error() == JSON_ERROR_NONE) ? ($return_data ? $data : TRUE) : FALSE;
     }
 
+    public function template_start($data = ""){
+        if (!empty($data)) {
+            foreach ($data as $key => $value) {
+                if($this->is_json($value)){
+                    ${"$key"} = json_decode($value);
+                }else{
+                    ${"$key"} = $value;
+                }
+
+            }
+        }
+        /***********title**************/
+        $begin_contents = file_get_contents(engine."Views/layout/begin.php", true);
+        $begin_contents=str_replace('{{','<?php easy::out(',$begin_contents);
+        $begin_contents=str_replace('}}','); ?>',$begin_contents);
+        $begin_contents=str_replace('<@','<?php ',$begin_contents);
+        $begin_contents=str_replace('@>',' ?>',$begin_contents);
+        $begin_contents='?>'.trim($begin_contents);
+        eval($begin_contents);
+    }
+
+    public function template_end($data = ""){
+        if (!empty($data)) {
+            foreach ($data as $key => $value) {
+                if($this->is_json($value)){
+                    ${"$key"} = json_decode($value);
+                }else{
+                    ${"$key"} = $value;
+                }
+
+            }
+        }
+        /***********end**************/
+        $end_contents = file_get_contents(engine."Views/layout/end.php", true);
+        $end_contents=str_replace('{{','<?php easy::out(',$end_contents);
+        $end_contents=str_replace('}}','); ?>',$end_contents);
+        $end_contents=str_replace('<@','<?php ',$end_contents);
+        $end_contents=str_replace('@>',' ?>',$end_contents);
+        $end_contents='?>'.trim($end_contents);
+        eval($end_contents);
+    }
+
     public function view($filename, $data = "")
     {
         if (!empty($data)) {
@@ -32,15 +74,6 @@ class load
             }
         }
         if(file_exists(engine."Views/" . $filename . ".php")){
-            /***********title**************/
-            $begin_contents = file_get_contents(engine."Views/layout/begin.php", true);
-            $begin_contents=str_replace('{{','<?php easy::out(',$begin_contents);
-            $begin_contents=str_replace('}}','); ?>',$begin_contents);
-            $begin_contents=str_replace('<@','<?php ',$begin_contents);
-            $begin_contents=str_replace('@>',' ?>',$begin_contents);
-            $begin_contents='?>'.trim($begin_contents);
-
-            eval($begin_contents);
             /**************view**************/
             $contents = file_get_contents(engine."Views/" . $filename . ".php", true);
             $contents=str_replace('{{','<?php easy::out(',$contents);
@@ -49,7 +82,6 @@ class load
             $contents=str_replace('@>',' ?>',$contents);
             $contents='?>'.trim($contents);
             eval($contents);
-            require_once engine."Views/layout/end.php";
         }else{
             echo "<pre>This View not exist</pre>";
         }

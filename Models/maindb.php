@@ -22,11 +22,11 @@ class Model extends init
         $result = $this->db->exec("get");
         return $result;
     }
-    public function seletcOne($id){
-        /**Select with pagination**/
+    public function randomPost(){
         $this->db->select("*");
-        $this->db->from("members");
-        $this->db->where("id",$id);
+        $this->db->from("posts");
+        $this->db->order("RAND()");
+        $this->db->limit(1);
         $result = $this->db->exec("get");
         return $result;
     }
