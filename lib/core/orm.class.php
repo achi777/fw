@@ -707,7 +707,7 @@ class orm
 
     {
 
-        $urlObj = new url();
+        $urlObj = new helper();
 
         $page = intval($urlObj->segment($segment));
 
@@ -759,10 +759,9 @@ class orm
     }
 
     public function pagination($segment, $num)
-
     {
 
-        $urlObj = new url();
+        $urlObj = new helper();
 
         $page = intval($urlObj->segment($segment));
 

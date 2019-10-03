@@ -1,0 +1,27 @@
+{
+  "name": "archilodishelidze/ao_framework",
+  "type": "library",
+  "description": "PHP MVC Framework",
+  "keywords": ["Rates", "AO_FRAMEWORK"],
+  "homepage": "https://github.com/achi777/ao_framework",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Archil Odishelidze",
+      "email": "archil.odishelidze@gmail.com",
+      "homepage": "https://github.com/achi777",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "classmap": ["src/"]
+  },
+  "require": {
+    "PHP": ">=5.3.4"
+
+  }
+}

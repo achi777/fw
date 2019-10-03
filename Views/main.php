@@ -12,7 +12,7 @@
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-            <@foreach ($posts AS $item):@>
+            <@foreach ($postList AS $item):@>
             <div class="col-md-4">
                 <h2>{{$item->title}}</h2>
                 <p>{{$item->description}}</p>
@@ -22,7 +22,9 @@
         </div>
 
         <hr>
-
+        <dir>
+            {{$pagination}}
+        </dir>
     </div>
     <!-- /container -->
 

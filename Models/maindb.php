@@ -46,10 +46,10 @@ class Model extends init
         return $result;
     }
 
-    public function pageList():string{
+    public function postList():string{
         /**Select with pagination**/
         $this->db->select("*");
-        $this->db->from("information");
+        $this->db->from("posts");
         $this->db->limit($this->db->paginationLimit(2, 3));
         $result = $this->db->exec("get");
         return $result;

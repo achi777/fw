@@ -21,6 +21,8 @@ class Controller extends init
         $data['copyright'] = "© Archil Odishelidze 2019";
         $data['posts'] = $this->model->posts();
         $data['randomPost'] = $this->model->randomPost();
+        $data['postList'] = $this->model->postList();
+        $data['pagination'] = $this->model->pagination();
         /******************************************/
         $this->load->template_start($header_data);
         /******************************************/
