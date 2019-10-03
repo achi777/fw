@@ -59,12 +59,12 @@ class Model extends init
         $result = $this->db->pagination(2, 3);
         return $result;
     }
-    public function recordToBase($name_geo,$name_eng){
+    public function recordToBase($title,$description,$details){
         /*Insert*/
-        $this->db->table("information");
-        $this->db->columns("name_geo", "name_eng");
-        $this->db->values($name_geo, $name_eng);
-        $this->db->exec("INSERT");
+        $this->db->table("posts");
+        $this->db->columns("title", "description", "details");
+        $this->db->values($title,$description,$details);
+        return $this->db->exec("INSERT");
     }
     public function updateToBase($id,$name_geo,$name_eng){
         /*Update*/

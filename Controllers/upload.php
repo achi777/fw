@@ -17,7 +17,7 @@ class Controller extends init {
             $this->file->upload_name("uploaded.jpg");
             echo $this->file->upload($this->input->file("file"));
         }
-        $header_data['title'] = "AO Framework Project";
+        $header_data['title'] = "AO Framework Project | Upload";
         $data['copyright'] = "© Archil Odishelidze 2019";
         $data['posts'] = $this->model->posts();
         $data['randomPost'] = $this->model->randomPost();

@@ -205,7 +205,7 @@ class orm
 
         foreach ($arg AS $var) {
 
-            $values .= "'" . $var . "',";
+            $values .= "'" . $this->mysqli->real_escape_string($var) . "',";
 
         }
 
