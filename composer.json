@@ -1,8 +1,8 @@
 {
-  "name": "archilodishelidze/ao_framework",
+  "name": "wafi/framework",
   "type": "library",
   "description": "PHP MVC Framework With Template Engine",
-  "keywords": ["Rates", "AO_FRAMEWORK"],
+  "keywords": ["Rates", "WAFI", "WAFI_FRAMEWORK", "AO_FRAMEWORK", "MVC", "TEMPLATE ENGINE"],
   "homepage": "https://github.com/achi777/fw",
   "license": "MIT",
   "version": "2.0.0",
