@@ -38,6 +38,14 @@ class Model extends init
         return $result;
     }
 
+    public function postByID($id){
+        $this->db->select("*");
+        $this->db->from("posts");
+        $this->db->where("id", $id);
+        $result = $this->db->exec("get");
+        return $result;
+    }
+
     public function pageList(){
         /**Select with pagination**/
         $this->db->select("*");
