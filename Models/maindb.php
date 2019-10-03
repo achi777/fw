@@ -50,13 +50,13 @@ class Model extends init
         /**Select with pagination**/
         $this->db->select("*");
         $this->db->from("posts");
-        $this->db->limit($this->db->paginationLimit(2, 3));
+        $this->db->limit($this->db->paginationLimit(2, 6));
         $result = $this->db->exec("get");
         return $result;
     }
     public function pagination():string{
         /**pagination**/
-        $result = $this->db->pagination(2, 3);
+        $result = $this->db->pagination(2, 6);
         return $result;
     }
     public function recordToBase($title,$description,$details){

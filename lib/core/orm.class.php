@@ -783,7 +783,6 @@ class orm
 
         /*****************************************************************/
 
-
         $url = $_SERVER['REQUEST_URI'];
 
         $url = rtrim($url, $page);
@@ -791,7 +790,9 @@ class orm
         $url = rtrim($url, "/");
 
         //echo "<pre>".$url."</pre>";
-
+        if(empty($urlObj->segment(1))){
+            $url = $url."/main" ;
+        }
 
         $firstpage = null;
 
