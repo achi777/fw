@@ -2,7 +2,7 @@
   "name": "wafi/framework",
   "type": "library",
   "description": "PHP MVC Framework With Template Engine",
-  "keywords": ["Rates", "WAFI", "WAFI_FRAMEWORK", "AO_FRAMEWORK", "MVC", "TEMPLATE ENGINE"],
+  "keywords": ["WAFI_PHP", "WAFI", "WAFI_FRAMEWORK", "AO_FRAMEWORK", "MVC", "TEMPLATE ENGINE"],
   "homepage": "https://github.com/achi777/fw",
   "license": "MIT",
   "version": "2.0.0",
