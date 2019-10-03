@@ -67,6 +67,10 @@ class orm
             exit;
 
         }
+        if ($this->mysqli->connect_errno) {
+            printf("Connect failed: %s\n", $this->mysqli->connect_error);
+            exit();
+        }
 
     }
 
@@ -435,7 +439,7 @@ class orm
 
         if (!$result) {
 
-            echo "<h1>გვერდი ვერ მოიძებნა (404 ბლიად...) </h1>";
+            echo "<h1>".$this->mysqli->error." -  error no : ".$this->mysqli->errno." </h1>";
 
             exit();
 

@@ -9,7 +9,6 @@ require_once engine."lib/config.php";
 require_once engine.'lib/init.php';
 require_once engine.'lib/router.php';
 require_once engine."plugins/plugin_manager.php";
-
 $loader = new router();
 $loader->createController();
 

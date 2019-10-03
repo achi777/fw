@@ -15,11 +15,11 @@ class Controller extends init
 
 
 
-    public function details()
+    public function details(): void
     {
         $header_data['title'] = "AO Framework Project || Details";
         $data['copyright'] = "© Archil Odishelidze 2019";
-        $data['details'] = $this->model->postByID($this->helper->segment(2));
+        $data['details'] = $this->model->postByID($this->convert->to_int($this->helper->segment(2)));
         /******************************************/
         $this->load->template_start($header_data);
         /******************************************/

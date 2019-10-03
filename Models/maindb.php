@@ -8,7 +8,7 @@ class Model extends init
         parent::__construct();
         $this->id = $this->helper->segment(1);
     }
-    public function selectJoin(){
+    public function selectJoin():string {
         /**Select**/
         $this->db->select("*");
         $this->db->from("information");
@@ -22,7 +22,7 @@ class Model extends init
         $result = $this->db->exec("get");
         return $result;
     }
-    public function randomPost(){
+    public function randomPost():string {
         $this->db->select("*");
         $this->db->from("posts");
         $this->db->order("RAND()");
@@ -31,14 +31,14 @@ class Model extends init
         return $result;
     }
 
-    public function posts(){
+    public function posts():string {
         $this->db->select("*");
         $this->db->from("posts");
         $result = $this->db->exec("get");
         return $result;
     }
 
-    public function postByID($id){
+    public function postByID(int $id):string {
         $this->db->select("*");
         $this->db->from("posts");
         $this->db->where("id", $id);
@@ -46,7 +46,7 @@ class Model extends init
         return $result;
     }
 
-    public function pageList(){
+    public function pageList():string{
         /**Select with pagination**/
         $this->db->select("*");
         $this->db->from("information");
@@ -54,7 +54,7 @@ class Model extends init
         $result = $this->db->exec("get");
         return $result;
     }
-    public function pagination(){
+    public function pagination():string{
         /**pagination**/
         $result = $this->db->pagination(2, 3);
         return $result;

@@ -81,7 +81,7 @@ class load
             $contents=str_replace('<@','<?php ',$contents);
             $contents=str_replace('@>',' ?>',$contents);
             $contents='?>'.trim($contents);
-            eval($contents);
+            @eval($contents);
         }else{
             echo "<pre>This View not exist</pre>";
         }
