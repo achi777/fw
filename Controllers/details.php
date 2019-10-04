@@ -14,8 +14,7 @@ class Controller extends init
     }
 
 
-
-    public function details(): void
+    public function details()
     {
         $header_data['title'] = "AO Framework Project || Details";
         $data['copyright'] = "© Archil Odishelidze 2019";

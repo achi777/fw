@@ -6,7 +6,7 @@ date_default_timezone_set("Asia/Tbilisi");
 
 /*Domain config*/
 define('domain','http://localhost');
-define('path','/fw');
+define('path', '');
 define('baseurl',domain.path);
 
 /*db config*/
