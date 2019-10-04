@@ -14,7 +14,7 @@ class Controller extends init
 
 
 
-    public function insert(): void
+    public function insert()
     {
         if($this->input->post("submit")){
             $lastID = $this->model->recordToBase($this->input->post("title"),$this->input->post("description"),$this->input->post("details"));
