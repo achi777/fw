@@ -112,7 +112,7 @@ class orm
 
     {
 
-        $this->joinTable = $table;
+        $this->joinTable[] = $table;
 
     }
 
@@ -121,7 +121,7 @@ class orm
 
     {
 
-        $this->joinMethod = $method;
+        $this->joinMethod[] = $method;
 
     }
 
@@ -134,7 +134,7 @@ class orm
 
         $col2 = $this->sql_secure($col2);
 
-        $this->joinWhere = $col1 . "=" . $col2;
+        $this->joinWhere[] = $col1 . "=" . $col2;
 
     }
 
@@ -570,11 +570,9 @@ class orm
         }
 
         if (!empty($this->joinStr)) {
-
             $join = $this->joinStr;
 
         } else {
-
             $join = "";
 
         }
@@ -583,12 +581,17 @@ class orm
 
             if (empty($this->joinMethod)) {
 
-                $this->joinMethod = "LEFT";
+                $this->joinMethod[] = "LEFT";
 
             }
 
-            $join = $this->joinMethod . " JOIN " . $this->joinTable . " ON " . $this->joinWhere;
-
+            //$join = $this->joinMethod[0] . " JOIN " . $this->joinTable[0] . " ON " . $this->joinWhere[0];
+            $join = "";
+            $n = count($this->joinTable) - 1;
+            for ($i = 0; $i <= $n; $i++) {
+                $join .= " " . $this->joinMethod[$i] . " JOIN " . $this->joinTable[$i] . " ON " . $this->joinWhere[$i];
+            }
+            //echo $join;
         } else {
 
             $join = "";
@@ -619,7 +622,7 @@ class orm
 
         $this->joinTable = "";
 
-        //echo $query;
+        echo $query;
 
         return $query;
 
