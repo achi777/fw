@@ -14,3 +14,6 @@ define('dbHost','localhost');
 define('dbUser','root');
 define('dbPass','');
 define('dbName','fw_base');
+/********Project Mode********/
+/**Change dev to production**/
+define('project_mode', 'dev');
