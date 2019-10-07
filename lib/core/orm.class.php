@@ -109,7 +109,6 @@ class orm
 
 
     public function join_table($table)
-
     {
 
         $this->joinTable[] = $table;
@@ -127,7 +126,6 @@ class orm
 
 
     public function join_where($col1, $col2)
-
     {
 
         $col1 = $this->sql_secure($col1);
@@ -616,14 +614,14 @@ class orm
 
         $this->table = "";
 
-        $this->joinMethod = "";
+        unset($this->joinMethod);
 
-        $this->joinWhere = "";
+        unset($this->joinWhere);
 
-        $this->joinTable = "";
-
-        echo $query;
-
+        unset($this->joinTable);
+        if (project_mode == "dev") {
+            echo "<pre>" . $query . "</pre>";
+        }
         return $query;
 
     }
