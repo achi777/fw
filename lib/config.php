@@ -7,6 +7,7 @@ date_default_timezone_set("Asia/Tbilisi");
 /*Domain config*/
 define('domain','http://localhost');
 define('path', '');
+//define('path', '/fw');
 define('baseurl',domain.path);
 
 /*db config*/
@@ -16,4 +17,4 @@ define('dbPass','');
 define('dbName','fw_base');
 /********Project Mode********/
 /**Change dev to production**/
-define('project_mode', 'dev');
+define('project_mode', 'production');
