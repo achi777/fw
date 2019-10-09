@@ -612,6 +612,8 @@ class orm
 
         $this->ordType = "";
 
+        $this->group = "";
+
         $this->table = "";
 
         unset($this->joinMethod);
