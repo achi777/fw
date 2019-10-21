@@ -1,7 +1,7 @@
 <?php
 class helper
 {
-    public function segment($part)
+    public static function segment($part)
     {
         $url = str_replace(path, "", $_SERVER['REQUEST_URI']);
         $result = explode("/", $url);
